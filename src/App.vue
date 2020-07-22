@@ -21,4 +21,26 @@ export default {
     margin: 0;
     padding: 0;
   }
+  p{
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+  }
+</style>
+<style lang="less">
+  .vux-header{
+    background-color: #458cff!important;
+    /*.vux-header-left{
+      .vux-header-back{
+        color: black;
+      }
+      .left-arrow::before{
+        border: 1px solid #000!important;
+        border-width: 1px 0 0 1px!important;
+      }
+    }
+    .vux-header-title{}*/
+  }
+
 </style>
