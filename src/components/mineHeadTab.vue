@@ -13,11 +13,11 @@
             custom-bar-width="60px"
             button-tab-border-color="red"
             bar-active-color="#527af8"
-            v-model="tabIndex">
+            v-model="_tabIndex">
             <tab-item
               @on-item-click="tabChanges"
               v-for="(td, index) of tabData"
-              :selected="index === tabIndex"
+              :selected="index === _tabIndex"
               :key="index">{{td}}</tab-item>
           </tab>
         </sticky>
@@ -33,7 +33,11 @@
       tab:{
         type: Array,
         default: []
-      }
+      },
+      tabIndex:{
+        type: Number,
+        default: 0
+      },
     },
     watch: {
       tab: {
@@ -41,12 +45,18 @@
           console.info(e)
         },
         deep:true
+      },
+      tabIndex: {
+        handler(e) {
+          this._tabIndex = e;
+        },
+        deep:true
       }
     },
     data () {
       return {
         tabData: [],
-        tabIndex: 0,
+        _tabIndex: 0,
         showSpace: false,
         disabled: typeof navigator !== 'undefined' && /iphone/i.test(navigator.userAgent) &&
           /ucbrowser/i.test(navigator.userAgent),
@@ -58,7 +68,8 @@
       }
     },
     created() {
-      this.tabData = this.tab
+      this._tabIndex = this.tabIndex;
+      this.tabData = this.tab;
     }
   }
 </script>

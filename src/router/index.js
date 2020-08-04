@@ -33,6 +33,11 @@ const MyTest = () => import('pages/mentor_module/more/center/myTest.vue')
 const MyCourse = () => import('pages/mentor_module/more/center/myCourse.vue')
 const MyQa = () => import('pages/mentor_module/more/center/myQa.vue')
 const MyCoupons = () => import('pages/mentor_module/more/center/myCoupons.vue')
+const MyCouponsGet = () => import('pages/mentor_module/more/center/coupon/get.vue')
+const MyCouponsUnused = () => import('pages/mentor_module/more/center/coupon/unused.vue')
+const MyCouponsUsed = () => import('pages/mentor_module/more/center/coupon/used.vue')
+const MyCouponsFailure = () => import('pages/mentor_module/more/center/coupon/failure.vue')
+
 const MyCourseSend = () => import('pages/mentor_module/more/center/myCourseSend.vue')
 const MyCollection = () => import('pages/mentor_module/more/center/myCollection.vue')
 const MyCreation = () => import('pages/mentor_module/more/center/myCreation.vue')
@@ -186,7 +191,30 @@ export default new Router({
     {
       path: '/myCoupons',
       name: '优惠券',
-      component: MyCoupons
+      component: MyCoupons,
+      redirect: '/myCoupons/get',
+      children: [
+        {
+          path: '/myCoupons/get',
+          name: '获取优惠券',
+          component: MyCouponsGet
+        },
+        {
+          path: '/myCoupons/unused',
+          name: '未使用优惠券',
+          component: MyCouponsUnused
+        },
+        {
+          path: '/myCoupons/used',
+          name: '已使用优惠券',
+          component: MyCouponsUsed
+        },
+        {
+          path: '/myCoupons/failure',
+          name: '已失效优惠券',
+          component: MyCouponsFailure
+        },
+      ]
     },
     {
       path: '/myCourseSend',

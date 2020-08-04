@@ -186,3 +186,7 @@ button, input{
   width: 100%;
   height: auto;
 }
+.bs{
+  border-radius: 8px;
+  box-shadow:1px 0px 17px 0px rgba(6,33,74,0.25);
+}
