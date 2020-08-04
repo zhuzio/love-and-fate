@@ -2,7 +2,8 @@
   <div class="article-item-container" ref="articleItemContainer">
     <div class="article-item"
          v-for="(ai, index) in articleData"
-         :key="index">
+         :key="index"
+         @click="articleJump(ai)">
       <div class="article-img fm">
         <img :src="ai.icon" :alt="ai.name" :style="`width: ${articleItemImgWidth}px`">
       </div>
@@ -28,6 +29,11 @@
     data() {
       return {
         articleItemImgWidth: 0
+      }
+    },
+    methods: {
+      articleJump(ele) {
+        this.$router.push('/articleDetail/'+ele.id)
       }
     },
     mounted() {

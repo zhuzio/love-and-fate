@@ -20,11 +20,18 @@
               </p>
             </div>
           </div>
-          <div class="course-price fb">
+          <div class="course-price fb" v-show="itemType === 0">
             <p class="price">
               共<span> {{cd.section}} </span>讲 <i> / </i> <b>¥</b> <span>{{cd.price}}</span>
             </p>
             <p><button>立即报名</button></p>
+          </div>
+          <div class="course-opera fb" v-show="itemType === 1">
+            <p class="aa">共<span> {{cd.section}} </span>讲
+              <span class="status-yes status" v-if="cd.isStudy">已学习 <i>{{cd.progress}}%</i></span>
+              <span class="status-no status" v-else>未学习</span>
+            </p>
+            <p class="bb" @click="courseOp(cd, index)"><i class="iconfont iconcaozuo-gengduo"></i></p>
           </div>
         </div>
       </div>
@@ -34,19 +41,39 @@
 <script>
   export default {
     name: "courseItem",
-    props: ['courseData'],
+    props: {
+      courseData: {
+        type: Array,
+        default: []
+      },
+      types: {
+        type: Number,
+        default: 0
+      }
+    },
     data() {
       return {
-        courseItemWidth: 0
+        courseItemWidth: 0,
+        itemType: 0
       }
     },
     methods: {
       courseJump(ele) {
         this.$emit('jump', ele)
+      },
+      courseOp(ele, idx) {
+        let params = {
+          ele: ele,
+          idx: idx
+        }
+        this.$emit('opera', params)
       }
     },
     mounted() {
       this.courseItemWidth = parseInt(this.$refs.courseItemContainer.clientWidth * 0.3)
+    },
+    created() {
+      this.itemType = this.types
     }
   }
 </script>
@@ -106,6 +133,29 @@
           padding: 3px 12px;
           font-size: 11px;
           border-radius: 10px;
+        }
+      }
+      .course-opera{
+        padding: 5px 0;
+        font-size: 14px;
+        *{
+          vertical-align: middle;
+        }
+        .aa{
+          color: #7e7e7e;
+          .status{
+            margin-left: 25px;
+            &.status-yes{
+              i{
+                color: red;
+              }
+            }
+          }
+        }
+        .bb{
+          i{
+            font-size: 22px;
+          }
         }
       }
     }

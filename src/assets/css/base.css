@@ -172,3 +172,17 @@ input[type="radio"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
+button, input{
+  background: none;
+  border: none;
+  outline: none;
+}
+.head-img-box{
+  border-radius: 50%;
+  overflow: hidden;
+}
+.head-img-box img{
+  display: block;
+  width: 100%;
+  height: auto;
+}

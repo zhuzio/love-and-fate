@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "643766",
+      "name": "详情",
+      "font_class": "16",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "10714391",
+      "name": "置顶 top",
+      "font_class": "zhidingtop",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "1272131",
+      "name": "操作-更多",
+      "font_class": "caozuo-gengduo",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1351",
+      "name": "向下",
+      "font_class": "xiangxia",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "648801",
+      "name": "沙漏",
+      "font_class": "shalou",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "12797036",
+      "name": "邀请",
+      "font_class": "yaoqing",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "2667330",
+      "name": "信息",
+      "font_class": "xinxi",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
       "icon_id": "1973140",
       "name": "赞",
       "font_class": "like__easyico",

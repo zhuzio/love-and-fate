@@ -87,7 +87,8 @@
               belong: '情绪科学',
               author: '王战',
               read: '1000',
-              praise: 999
+              praise: 999,
+              id: 0
             },
             {
               icon: require('../../../assets/images/artise_pic2.jpg'),
@@ -95,7 +96,8 @@
               belong: '情绪科学',
               author: '王战',
               read: '1000',
-              praise: 999
+              praise: 999,
+              id: 1
             },
             {
               icon: require('../../../assets/images/artise_pic3.jpg'),
@@ -103,10 +105,11 @@
               belong: '情绪科学',
               author: '王战',
               read: '1000',
-              praise: 999
+              praise: 999,
+              id: 2
             }
           ],
-          articleSelect: true,
+          articleSelect: false,
           elementWidth: document.body.clientWidth * 0.75,
           elementHeight: document.body.clientHeight,
           selectInfo: [
