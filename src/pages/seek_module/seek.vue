@@ -1,5 +1,5 @@
 <template>
-    <div>征婚
+    <div>征婚页面
          <tab-foot></tab-foot>
     </div>
     

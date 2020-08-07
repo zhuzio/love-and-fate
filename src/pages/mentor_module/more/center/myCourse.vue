@@ -73,7 +73,7 @@
     },
     data() {
       return {
-        tabData: ['学习中', '代付款'],
+        tabData: ['学习中', '待付款'],
         tabIdx: 0,
         courseItemWidth: 0,
         courseList: [

@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="my-qa-drafts-container" v-show="tabIdx === 1">
-        <no-data text="暂无相关数据"></no-data>
+        <no-data text="暂无相关数据" noType="data"></no-data>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@
         .qa-belong{
           span:nth-child(1){
             display: inline-block;
-            background-color: #ccc;
+            background-color: #eaeaea;
             border-radius: 2px;
             padding: 1px 5px;
             font-size: 12px;

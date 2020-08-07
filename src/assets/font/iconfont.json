@@ -6,6 +6,97 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11121454",
+      "name": "分割线",
+      "font_class": "fengexian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "577352",
+      "name": "清除",
+      "font_class": "clean",
+      "unicode": "e747",
+      "unicode_decimal": 59207
+    },
+    {
+      "icon_id": "731513",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "1789257",
+      "name": "表格",
+      "font_class": "biaoge",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "3264901",
+      "name": "对齐",
+      "font_class": "duiqi",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "4236624",
+      "name": "全屏",
+      "font_class": "quanping1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "5431171",
+      "name": "关于",
+      "font_class": "guanyu",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "7069161",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "10047318",
+      "name": "文本颜色",
+      "font_class": "ziyuan",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "12323518",
+      "name": "撤销",
+      "font_class": "chexiao",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "12493737",
+      "name": "文字-01",
+      "font_class": "wenzi-",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "12708697",
+      "name": "链接",
+      "font_class": "lianjie",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "13546372",
+      "name": "排版",
+      "font_class": "paiban",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
       "icon_id": "643766",
       "name": "详情",
       "font_class": "16",

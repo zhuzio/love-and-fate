@@ -6,7 +6,7 @@
       <div class="course-author fb">
         <div class="author flex">
           <div class="author-head-img fc">
-            <img src="../../../assets/images/default_head_img.png" alt="">
+            <img src="@/assets/images/default_head_img.png" alt="">
           </div>
           <div class="author-info">
             <p class="name">胡慎之</p>

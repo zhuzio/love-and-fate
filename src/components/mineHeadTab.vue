@@ -48,7 +48,9 @@
       },
       tabIndex: {
         handler(e) {
-          this._tabIndex = e;
+          this.$nextTick(function () {
+            this._tabIndex = e;
+          })
         },
         deep:true
       }

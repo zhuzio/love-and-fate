@@ -19,11 +19,18 @@
     },
     watch: {
       $route: {
-        handler: function(val, oldVal){
-          console.log(val);
+        handler: function(val){
+          let path = val.path.split('/')[2];
+          this.judge(path)
         },
         // 深度观察监听
         deep: true
+      }
+    },
+    data() {
+      return {
+        tabData: ['领取优惠券', '未使用', '已使用', '已失效'],
+        tabIdx: 0,
       }
     },
     methods: {
@@ -43,34 +50,34 @@
             this.$router.replace('/myCoupons/failure')
             break;
         }
+      },
+      judge(route) {
+        let that = this;
+        switch (route) {
+          case 'get':
+           // debugger
+            that.tabIdx = 0;
+            break;
+          case 'unused':
+            that.tabIdx = 1;
+            break;
+          case 'used':
+            that.tabIdx = 2;
+            break;
+          case 'failure':
+            that.tabIdx = 3;
+            break;
+        }
       }
     },
-    data() {
-      return {
-        tabData: ['领取优惠券', '未使用', '已使用', '已失效'],
-        tabIdx: 0,
-      }
-    },
+
     beforeCreate() {
-      let path = (this.$route.path).split('/')[2];
-      switch (path) {
-        case 'get':
-          this.$router.replace('/myCoupons/get')
-          break;
-        case 'unused':
-          this.$router.replace('/myCoupons/unused')
-          break;
-        case 'used':
-          this.$router.replace('/myCoupons/used')
-          break;
-        case 'failure':
-          this.$router.replace('/myCoupons/failure')
-          break;
-      }
+
 
     },
     created() {
-
+      let path = (this.$route.path).split('/')[2];
+      this.judge(path)
     }
   }
 </script>

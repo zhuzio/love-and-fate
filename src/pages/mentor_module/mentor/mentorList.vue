@@ -1,14 +1,17 @@
 <template>
   <div>
     <div class="consult-container">
-      <div class="consult-head fb" ref="selectButton">
+      <div class="consult-head" ref="selectButton">
         <div class="head-title fb">
-          <img src="@/assets/images/icon/message.png" alt="">
-          <p>资讯 · 倾诉</p>
-        </div>
-        <div class="head-search" @click="mentorSelect = true">
-          <span>搜索</span>
-          <i class="iconfont iconsousuo"></i>
+          <div class="head-title-left flex" @click="changeMentor(0)">
+            <img src="@/assets/images/icon/message.png" alt="">
+            <p>资讯 · 倾诉</p>
+          </div>
+          <div class="head-title-right" @click="changeMentor(1)"><p>特约导师</p></div>
+          <div class="head-search" @click="mentorSelect = true">
+            <span>搜索</span>
+            <i class="iconfont iconsousuo"></i>
+          </div>
         </div>
       </div>
       <div
@@ -74,35 +77,35 @@
       return {
         mentorList: [
           {
-            headImg: require('../../../assets/images/mentor1.jpg'),
+            headImg: require('@/assets/images/mentor1.jpg'),
             name: '王俊涛',
             amount: 7726,
             major: ['情绪管理', '婴幼教育', '职场发展', '国家二级心理咨询师', 'EAP咨询师'],
-            charge: '300',
+            charge: '300.00',
             status: 0
           },
           {
-            headImg: require('../../../assets/images/mentor2.jpg'),
+            headImg: require('@/assets/images/mentor2.jpg'),
             name: '赵立新',
             amount: 2342,
             major: ['情绪管理', '婴幼教育', '职场发展', '国家二级心理咨询师', 'EAP咨询师'],
-            charge: '500',
+            charge: '500.00',
             status: 0
           },
           {
-            headImg: require('../../../assets/images/mentor1.jpg'),
+            headImg: require('@/assets/images/mentor1.jpg'),
             name: '王明旭',
             amount: 123,
             major: ['情绪管理', '婴幼教育', '职场发展', '国家二级心理咨询师', 'EAP咨询师'],
-            charge: '600',
+            charge: '600.00',
             status: 0
           },
           {
-            headImg: require('../../../assets/images/mentor2.jpg'),
+            headImg: require('@/assets/images/mentor2.jpg'),
             name: '周振杰',
             amount: 47456,
             major: ['情绪管理', '婴幼教育', '职场发展', '国家二级心理咨询师', 'EAP咨询师'],
-            charge: '400',
+            charge: '400.00',
             status: 0
           },
         ],
@@ -206,6 +209,9 @@
       // 跳转详情
       toMentorDetail(ele) {
         this.$router.push('/mentorInfo')
+      },
+      changeMentor(idx) {
+        this.mentorList.reverse()
       }
     },
     created() {}
@@ -218,24 +224,32 @@
       padding: 30px 14px 15px;
 
       .head-title {
-        img {
-          width: 40px;
-          height: auto;
-          display: block;
-        }
+        .head-title-left{
+          img {
+            width: 40px;
+            height: auto;
+            display: block;
+          }
 
-        p {
-          font-size: 14px;
-          font-weight: bold;
-          color: black;
-          margin-left: 16px;
+          p {
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            margin-left: 16px;
+          }
         }
-      }
-
-      .head-search {
-        * {
-          vertical-align: middle;
-          color: #808080;
+        .head-title-right{
+          p{
+            font-size: 16px;
+            color: #ffd709;
+          }
+        }
+        .head-search {
+          font-size: 13px;
+          * {
+            vertical-align: middle;
+            color: #808080;
+          }
         }
       }
     }
@@ -247,7 +261,7 @@
         box-shadow: 1px 3px 5px 0px rgba(6, 33, 74, 0.25);
         border: 1px solid #f4f4f4;
         box-sizing: border-box;
-        border-radius: 10px;
+        border-radius: 5px;
         margin-bottom: 16px;
 
         .mentor-head-img {
@@ -289,12 +303,12 @@
         .mentor-major {
           p {
             text-align: left;
-
+            margin-top: 5px;
             span {
               display: inline-block;
-              background-color: #e6e6e6;
+              background-color: #f6f6f6;
               margin: 0 6px 6px 0;
-              font-size: 9px;
+              font-size: 11px;
               padding: 1px 2px;
               border-radius: 5px;
             }

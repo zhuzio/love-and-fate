@@ -4,7 +4,7 @@
       <div class="mentor-detail-container">
         <div class="mentor-head">
           <div class="head-img">
-            <img src="../../../assets/images/mentor_detail.jpg" alt="">
+            <img src="@//assets/images/mentor_detail.jpg" alt="">
           </div>
           <div class="mentor-base-info">
             <p class="info-name-degree">
@@ -38,9 +38,10 @@
                 </div>
               </div>
               <div class="cs-chose-container">
-                <div class="fb chose-list">
-                  <p>预约时长</p>
-                  <p class="chose-value chose-time" @click="popChoseDate = true">
+                <div class="fb chose-list" @click="timePicker">
+                  <p >预约时长</p>
+                  <!--@click="popChoseDate = true"-->
+                  <p class="chose-value chose-time" >
                     <span>{{showSelectDate}}</span><i class="iconfont iconyou"></i>
                   </p>
                 </div>
@@ -76,15 +77,20 @@
           <div class="mentor-others-list">
             <h2>评价</h2>
             <div class="evaluation-container">
-              <ul :style="`width:${evaluationList.length * (elementWidth + 20)}px`">
-                <li v-for="(el, index) in evaluationList" :key="index" :style="`width: ${elementWidth}px;`">
+              <scroller lock-y :scrollbar-x=false>
+                <ul :style="`width:${evaluationList.length * (elementWidth + 20)}px`">
+                <li class="bs" v-for="(el, index) in evaluationList" :key="index" :style="`width: ${elementWidth}px;`">
                   <div class="e-user fb">
-                    <p class="info flex"><img :src="el.headImg" :alt="el.name"> <span>{{el.name}}</span></p>
+                    <div class="info flex">
+                      <div class="head-img-box"><img :src="el.headImg" :alt="el.name"></div>
+                      <span>{{el.name}}</span>
+                    </div>
                     <!--<p class="praise"><i class="iconfont"></i><span>{{el.praise}}</span></p>-->
                   </div>
                   <p class="e-text">{{el.evaluation}}</p>
                 </li>
               </ul>
+              </scroller>
             </div>
           </div>
           <div class="mentor-others-list">
@@ -101,8 +107,8 @@
                   议你直接带弟弟去当地医院临床心理科就诊,根据
                   医生的诊断和治疗方案,一方面专业评估弟弟的情....</p>
                 <div class="dynamic-praise flex">
-                  <p class="use"><img src="../../../assets/images/icon/praise.png" alt=""><span>18人写得有用</span></p>
-                  <p class="consult"><img src="../../../assets/images/icon/comments.png" alt=""><span>3人评论</span></p>
+                  <p class="use"><img src="@//assets/images/icon/praise.png" alt=""><span>18人写得有用</span></p>
+                  <p class="consult"><img src="@//assets/images/icon/comments.png" alt=""><span>3人评论</span></p>
                 </div>
               </div>
               <div class="dynamic-list">
@@ -117,8 +123,8 @@
                   据你的情况进行诊断,可能包含药物治疗和心理咨
                   咨询师专栏</p>
                 <div class="dynamic-praise flex">
-                  <p class="use"><img src="../../../assets/images/icon/praise.png" alt=""><span>18人写得有用</span></p>
-                  <p class="consult"><img src="../../../assets/images/icon/comments.png" alt=""><span>3人评论</span></p>
+                  <p class="use"><img src="@//assets/images/icon/praise.png" alt=""><span>18人写得有用</span></p>
+                  <p class="consult"><img src="@//assets/images/icon/comments.png" alt=""><span>3人评论</span></p>
                 </div>
               </div>
             </div>
@@ -179,19 +185,19 @@
         return {
           service: [
             {
-              icon: require('../../../assets/images/icon/onlineConsult.png'),
+              icon: require('@/assets/images/icon/onlineConsult.png'),
               name: '在线咨询',
               charge: '300元 / 小时',
               id: 0
             },
             {
-              icon: require('../../../assets/images/icon/mike.png'),
+              icon: require('@/assets/images/icon/mike.png'),
               name: '语音咨询',
               charge: '500 / 小时',
               id: 1
             },
             {
-              icon: require('../../../assets/images/icon/faceToFace.png'),
+              icon: require('@/assets/images/icon/faceToFace.png'),
               name: '面对面咨询',
               charge: '900 / 小时',
               id: 2
@@ -199,28 +205,28 @@
           ],
           evaluationList: [
             {
-              headImg:require('../../../assets/images/mentor1.jpg'),
+              headImg:require('@/assets/images/mentor1.jpg'),
               name: '阿梁',
               praise: 33,
               evaluation: '会有很多收获，很有启发。有一种被理解的感觉，被读懂的感觉，也是被不断赋能，增加信心',
               id: 0
             },
             {
-              headImg:require('../../../assets/images/mentor2.jpg'),
+              headImg:require('@/assets/images/mentor2.jpg'),
               name: '阿娇',
               praise: 45,
               evaluation: '讲的特别好，我真的是非常的喜欢，对我的帮助很大，非常感谢老师的细心讲解，给我的生活带来很大的帮助！',
               id: 1
             },
             {
-              headImg:require('../../../assets/images/mentor1.jpg'),
+              headImg:require('@/assets/images/mentor1.jpg'),
               name: '霏霏',
               praise: 3,
               evaluation: '就这？我的钱啊........能不能讲清楚一点？',
               id: 2
             },
             {
-              headImg:require('../../../assets/images/mentor2.jpg'),
+              headImg:require('@/assets/images/mentor2.jpg'),
               name: '大斌',
               praise: 300,
               evaluation: '我的天哪，简直棒极了',
@@ -314,6 +320,9 @@
             }
           },30)
         },
+        timePicker() {
+          this.$router.push('/timeSet')
+        }
       },
       created() {
       }
@@ -526,29 +535,28 @@
           ul{
             display:-webkit-box;
             display:box;
-            padding: 15px;
+            padding: 10px;
             li{
-              box-shadow: 1px 3px 5px 5px rgba(204, 204, 204, 0.2);
               border-radius: 10px;
               padding: 20px 15px;
               margin-right: 20px;
               .e-user{
-                margin-bottom: 20px;
+                margin-bottom: 10px;
                 .info{
-                  img{
-                    display: block;
-                    width: 20px;
-                    border-radius: 50%;
+                  .head-img-box{
                     margin-right: 10px;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
                   }
                   span{
                     color: #c6c9d3;
-                    font-size: 12px;
+                    font-size: 14px;
                   }
                 }
               }
               .e-text{
-                font-size: 12px;
+                font-size: 14px;
                 text-align: left;
               }
             }

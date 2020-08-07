@@ -3,12 +3,12 @@
     <x-header>线下课程详情</x-header>
     <div class="course-detail-container">
       <div class="course-detail-cover fm">
-        <img src="../../../assets/images/offline_cover.jpg" alt="">
+        <img src="@/assets/images/offline_cover.jpg" alt="">
       </div>
       <div class="course-author fb">
         <div class="author flex">
           <div class="author-head-img fc">
-            <img src="../../../assets/images/default_head_img.png" alt="">
+            <img src="@/assets/images/default_head_img.png" alt="">
           </div>
           <div class="author-info">
             <p class="name">胡慎之</p>
@@ -79,8 +79,8 @@
         params: this.$route.params,
         videoInfo: {
           // src: 'https://s3.meituan.net/v1/mss_80d691367d3045158769d28878d5cfd6/merchant-video/7d01905a16f4a6e0db4b4ac2894b743a.mp4',
-          src: require('../../../assets/images/video.mp4'),
-          poster: require('../../../assets/images/video_cover.jpg'),
+          src: require('@/assets/images/video.mp4'),
+          poster: require('@/assets/images/video_cover.jpg'),
           name: '测试视频',
           videoTime: '119',
         },
@@ -111,7 +111,7 @@
         commentData: [
           {
             userName: '张优秀同学',
-            userHeadImg: require('../../../assets/images/comment_img.jpg'),
+            userHeadImg: require('@/assets/images/comment_img.jpg'),
             comments: '山不在高，有仙则灵；水不在深，有龙则灵，斯是陋室，惟吾德馨。',
             isPraise: false,
             commentTime: '06-22 12:05',
@@ -120,7 +120,7 @@
           },
           {
             userName: '小不点嘚吧嘚啊',
-            userHeadImg: require('../../../assets/images/default_head_img.png'),
+            userHeadImg: require('@/assets/images/default_head_img.png'),
             comments: '18日下午，北京空中出現日晕园林景观，更让人惊讶的是，焦距附近也有此外一道七彩七色彩虹，群众游人竞相赞不绝口、看热闹照相。',
             isPraise: true,
             commentTime: '04-18 12:05',
@@ -129,7 +129,7 @@
           },
           {
             userName: '不吃薄荷喵的阿喵',
-            userHeadImg: require('../../../assets/images/mentor2.jpg'),
+            userHeadImg: require('@/assets/images/mentor2.jpg'),
             comments: '　一声呼唤背后的回乡驰援，是同舟共济的家国担当；无数普通人的挺身而出，是不畏艰险、共克时艰的中国精神。做好防汛抗洪抢险救灾工作，本就是一场硬仗。面对疫情，我们众志成城；面对洪水，我们亦是如此。戮力同心、全力以赴、协同作战，形成抗洪抢险的强大合力；纾解险情，最大程度减少各种损失，筑起守卫生命的“铜墙铁壁”，我们必将打赢防汛抗洪抢险救灾这场硬仗。',
             isPraise: false,
             commentTime: '02-12 12:05',

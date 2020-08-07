@@ -11,6 +11,7 @@ const MentorInfo = () => import('pages/mentor_module/mentor/mentorInfo.vue')
 
 const ArticleList = () => import('pages/mentor_module/article/articleList.vue')
 const ArticleDetail = () => import('pages/mentor_module/article/articleDetail.vue')
+const ReleaseArticle = () => import('pages/mentor_module/article/releaseArticle.vue')
 
 const CourseList = () => import('pages/mentor_module/course/CourseList.vue')
 const CourseDetailVideo = () => import('pages/mentor_module/course/courseDetailVideo.vue')
@@ -37,11 +38,16 @@ const MyCouponsGet = () => import('pages/mentor_module/more/center/coupon/get.vu
 const MyCouponsUnused = () => import('pages/mentor_module/more/center/coupon/unused.vue')
 const MyCouponsUsed = () => import('pages/mentor_module/more/center/coupon/used.vue')
 const MyCouponsFailure = () => import('pages/mentor_module/more/center/coupon/failure.vue')
-
 const MyCourseSend = () => import('pages/mentor_module/more/center/myCourseSend.vue')
 const MyCollection = () => import('pages/mentor_module/more/center/myCollection.vue')
 const MyCreation = () => import('pages/mentor_module/more/center/myCreation.vue')
 
+const TimeSet = () => import('pages/mentor_module/other/timeSet.vue')
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 Vue.use(Router)
 
@@ -133,6 +139,11 @@ export default new Router({
       component: ArticleDetail
     },
     {
+      path: '/releaseArticle',
+      name: '发布文章',
+      component: ReleaseArticle
+    },
+    {
       path: '/qaDetail/:id',
       name: '问答详情',
       component: QaDetail
@@ -192,7 +203,7 @@ export default new Router({
       path: '/myCoupons',
       name: '优惠券',
       component: MyCoupons,
-      redirect: '/myCoupons/get',
+      redirect: '/myCoupons/unused',
       children: [
         {
           path: '/myCoupons/get',
@@ -231,5 +242,10 @@ export default new Router({
       name: '内容创作',
       component: MyCreation
     },
+    {
+      path: '/timeSet',
+      name: '设置时间',
+      component: TimeSet
+    }
   ]
 })

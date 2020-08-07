@@ -51,6 +51,14 @@
         default: 0
       }
     },
+    watch: {
+      courseData: {
+        handler(e) {
+          console.info(e)
+        },
+        deep: true
+      },
+    },
     data() {
       return {
         courseItemWidth: 0,
@@ -70,9 +78,11 @@
       }
     },
     mounted() {
-      this.courseItemWidth = parseInt(this.$refs.courseItemContainer.clientWidth * 0.3)
+      this.courseItemWidth = parseInt(document.body.clientWidth * 0.27)
+      console.info(this.courseItemWidth)
     },
     created() {
+      console.info(this.courseData)
       this.itemType = this.types
     }
   }

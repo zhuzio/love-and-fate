@@ -382,36 +382,39 @@
   }
 </style>
 <style lang="less">
-  .vux-tab .vux-tab-item {
-    background: none !important;
+  .head-tab{
+    .vux-tab .vux-tab-item {
+      background: none !important;
+    }
+
+    .vux-tab-bar-inner {
+      position: relative;
+      border-radius: 10px;
+      background: none !important;
+      overflow: hidden;
+    }
+
+    .vux-tab-bar-inner:before {
+      position: absolute !important;
+      content: '';
+      display: block;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #0fa3fd;
+    }
+
+    .vux-tab-bar-inner:after {
+      position: absolute !important;
+      content: '';
+      display: block;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #0ee3c7;
+    }
   }
 
-  .vux-tab-bar-inner {
-    position: relative;
-    border-radius: 10px;
-    background: none !important;
-    overflow: hidden;
-  }
-
-  .vux-tab-bar-inner:before {
-    position: absolute !important;
-    content: '';
-    display: block;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #0fa3fd;
-  }
-
-  .vux-tab-bar-inner:after {
-    position: absolute !important;
-    content: '';
-    display: block;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #0ee3c7;
-  }
 </style>
